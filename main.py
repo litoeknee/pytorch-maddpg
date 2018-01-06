@@ -87,6 +87,7 @@ for i_episode in range(n_episode):
         # env.render()
         obs = Variable(obs).type(FloatTensor)
         action = maddpg.select_action(obs).data.cpu()
+        # print(action)
         # obs_, reward, done, _ = world.step(action.numpy())
         obs_, reward, done, _ = env.step(action.numpy())
 
