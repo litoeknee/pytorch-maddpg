@@ -73,6 +73,7 @@ class MADDPG:
         c_loss = []
         a_loss = []
         for agent in range(self.n_agents):
+            print(self.memory.__len__(), agent)
             transitions = self.memory.sample(self.batch_size)
             batch = Experience(*zip(*transitions))
             non_final_mask = ByteTensor(list(map(lambda s: s is not None,
@@ -150,11 +151,12 @@ class MADDPG:
 
             act += Variable(
                 th.from_numpy(
-                    np.random.randn(2) * self.var[i]).type(FloatTensor))
+                    np.random.randn(self.n_actions) * self.var[i]).type(FloatTensor))
 
             if self.episode_done > self.episodes_before_train and\
                self.var[i] > 0.05:
-                self.var[i] *= 0.999998
+                # self.var[i] *= 0.999998
+                self.var[i] *= 0.9998
             act = th.clamp(act, -1.0, 1.0)
 
             actions[i, :] = act
