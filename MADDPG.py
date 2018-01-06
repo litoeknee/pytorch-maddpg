@@ -155,8 +155,8 @@ class MADDPG:
 
             if self.episode_done > self.episodes_before_train and\
                self.var[i] > 0.05:
-                # self.var[i] *= 0.999998
-                self.var[i] *= 0.9998
+                self.var[i] *= 0.999998
+                # self.var[i] *= 0.9998
             act = th.clamp(act, -1.0, 1.0)
 
             actions[i, :] = act

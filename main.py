@@ -28,7 +28,7 @@ scenario = scenarios.load(args.scenario).Scenario()
 world = scenario.make_world()
 # create multiagent environment
 env = MultiAgentEnv(world, scenario.reset_world, scenario.reward, scenario.observation, info_callback=None,
-                    done_callback=scenario.done, shared_viewer=False)
+                    done_callback=scenario.done, shared_viewer=True)
 
 # food_reward = 10.
 # poison_reward = -1.
@@ -55,7 +55,8 @@ th.manual_seed(1234)
 n_agents = env.n
 # Currently supports homogenious agents
 n_states = env.observation_space[0].shape[0]
-n_actions = env.observation_space[0].shape[0]
+n_actions = env.action_space[0].shape[0]
+# print(env.action_space[0].shape[0], n_states)
 capacity = 1000000
 batch_size = 100
 
@@ -83,7 +84,7 @@ for i_episode in range(n_episode):
         if i_episode % 100 == 0 and e_render:
             # world.render()
             env.render()
-        env.render()
+        # env.render()
         obs = Variable(obs).type(FloatTensor)
         action = maddpg.select_action(obs).data.cpu()
         # obs_, reward, done, _ = world.step(action.numpy())
