@@ -73,7 +73,7 @@ class MADDPG:
         c_loss = []
         a_loss = []
         for agent in range(self.n_agents):
-            print(self.memory.__len__(), agent)
+            # print(self.memory.__len__(), agent)
             transitions = self.memory.sample(self.batch_size)
             batch = Experience(*zip(*transitions))
             non_final_mask = ByteTensor(list(map(lambda s: s is not None,
@@ -148,6 +148,7 @@ class MADDPG:
         for i in range(self.n_agents):
             sb = state_batch[i, :].detach()
             act = self.actors[i](sb.unsqueeze(0)).squeeze()
+            # print(self.actors[i], act)
 
             act += Variable(
                 th.from_numpy(

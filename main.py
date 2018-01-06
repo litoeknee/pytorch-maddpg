@@ -28,7 +28,7 @@ scenario = scenarios.load(args.scenario).Scenario()
 world = scenario.make_world()
 # create multiagent environment
 env = MultiAgentEnv(world, scenario.reset_world, scenario.reward, scenario.observation, info_callback=None,
-                    done_callback=scenario.done, shared_viewer=True)
+                    done_callback=scenario.done, shared_viewer=True, discrete_action_space=False)
 
 # food_reward = 10.
 # poison_reward = -1.
@@ -56,7 +56,7 @@ n_agents = env.n
 # Currently supports homogenious agents
 n_states = env.observation_space[0].shape[0]
 n_actions = env.action_space[0].shape[0]
-# print(env.action_space[0].shape[0], n_states)
+print(env.action_space[0].shape[0], n_states)
 capacity = 1000000
 batch_size = 100
 
