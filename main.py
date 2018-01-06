@@ -6,7 +6,7 @@ import argparse
 from torch.autograd import Variable
 # from madrl_environments.pursuit import MAWaterWorld_mod
 from multiagent.environment import MultiAgentEnv
-from multiagent.policy import InteractivePolicy
+# from multiagent.policy import InteractivePolicy
 import multiagent.scenarios as scenarios
 from MADDPG import MADDPG
 import numpy as np
