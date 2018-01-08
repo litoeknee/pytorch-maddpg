@@ -58,7 +58,7 @@ n_states = env.observation_space[0].shape[0]
 n_actions = env.action_space[0].shape[0]
 print(env.action_space[0].shape[0], n_states)
 capacity = 1000000
-batch_size = 100
+batch_size = 1000
 
 n_episode = 20000
 max_steps = 1000
@@ -79,6 +79,7 @@ for i_episode in range(n_episode):
         obs = th.from_numpy(obs).float()
     total_reward = 0.0
     rr = np.zeros((n_agents,))
+    t = 0
     for t in range(max_steps):
         # render every 100 episodes to speed up training
         if i_episode % 100 == 0 and e_render:
@@ -107,8 +108,12 @@ for i_episode in range(n_episode):
         c_loss, a_loss = maddpg.update_policy()
         # print(done)
         # To prevent agents from out-of-bound
+
+        # input("raw_input: ")
         if np.any(done):
             break
+    total_reward /= t
+    rr /= t
 
     maddpg.episode_done += 1
     print('Episode: %d, reward = %f' % (i_episode, total_reward))
