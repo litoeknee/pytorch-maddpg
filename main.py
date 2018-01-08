@@ -61,7 +61,7 @@ capacity = 1000000
 batch_size = 1000
 
 n_episode = 20000
-max_steps = 1000
+max_steps = 100
 episodes_before_train = 100
 
 win = None
