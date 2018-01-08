@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="faee8e5b-ce95-42d3-a8e5-853d9465198b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MADDPG.py" afterPath="$PROJECT_DIR$/MADDPG.py" />
     </list>
     <ignored path="pytorch-maddpg.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MADDPG.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MADDPG.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MADDPG.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-28.444445">
-              <caret line="160" column="24" selection-start-line="160" selection-start-column="24" selection-end-line="160" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.8101266">
+              <caret line="160" column="34" selection-start-line="160" selection-start-column="34" selection-end-line="160" selection-end-column="34" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -37,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.028481">
-              <caret line="115" column="10" selection-start-line="115" selection-start-column="10" selection-end-line="115" selection-end-column="10" />
+            <state vertical-scroll-proportion="-24.555555">
+              <caret line="163" column="45" selection-start-line="163" selection-start-column="45" selection-end-line="163" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -56,9 +55,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/../multiagent-particle-envs/multiagent/environment.py" />
-        <option value="$PROJECT_DIR$/MADDPG.py" />
         <option value="$PROJECT_DIR$/model.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/MADDPG.py" />
       </list>
     </option>
   </component>
@@ -655,21 +654,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MADDPG.py">
+    <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.444445">
-          <caret line="160" column="24" selection-start-line="160" selection-start-column="24" selection-end-line="160" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-24.555555">
+          <caret line="163" column="45" selection-start-line="163" selection-start-column="45" selection-end-line="163" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/MADDPG.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.028481">
-          <caret line="115" column="10" selection-start-line="115" selection-start-column="10" selection-end-line="115" selection-end-column="10" />
-          <folding />
+        <state vertical-scroll-proportion="0.8101266">
+          <caret line="160" column="34" selection-start-line="160" selection-start-column="34" selection-end-line="160" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
