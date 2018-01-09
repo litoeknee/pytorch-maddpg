@@ -18,8 +18,7 @@ class Critic(nn.Module):
         # self.FC4 = nn.Linear(300, 1)
 
         self.FC1 = nn.Linear(obs_dim, 128)
-        self.FC2 = nn.Linear(128+act_dim, 64)
-        self.FC3 = nn.Linear(64, 1)
+        self.FC2 = nn.Linear(128+act_dim, 1)
         # self.FC3 = nn.Linear(64, 30)
         # self.FC4 = nn.Linear(30, 1)
 
@@ -27,8 +26,9 @@ class Critic(nn.Module):
     def forward(self, obs, acts):
         result = F.relu(self.FC1(obs))
         combined = th.cat([result, acts], 1)
-        result = F.relu(self.FC2(combined))
-        result = self.FC3(result)
+        result = self.FC2(combined)
+        # result = F.relu(result)
+        # result = self.FC3(result)
         # return self.FC4(F.relu(result))
         return result
 
@@ -38,15 +38,15 @@ class Actor(nn.Module):
         # self.FC1 = nn.Linear(dim_observation, 500)
         # self.FC2 = nn.Linear(500, 128)
         # self.FC3 = nn.Linear(128, dim_action)
-        self.FC1 = nn.Linear(dim_observation, 128)
-        self.FC2 = nn.Linear(128, dim_action)
+        self.FC1 = nn.Linear(dim_observation, dim_action)
         # self.FC2 = nn.Linear(128, 32)
         # self.FC3 = nn.Linear(32, dim_action)
 
     # action output between -2 and 2
     def forward(self, obs):
-        result = F.relu(self.FC1(obs))
-        result = F.tanh(self.FC2(result))
+        result = F.tanh(self.FC1(obs))
+        # result = F.relu(self.FC1(obs))
+        # result = F.tanh(self.FC2(result))
         # result = F.relu(self.FC2(result))
         # result = F.tanh(self.FC3(result))
         return result
